@@ -21,7 +21,7 @@
         <span>
             <h2>Scan the barcode <br /> to open in your <span>mobile</span> device</h2>
             <img class="barcode-img"
-                src="https://qrcode.tec-it.com/API/QRCode?data=%d0%93%d0%b5%d0%bd%d0%b5%d1%80%d0%b0%d1%82%d0%be%d1%80+QR-%d0%ba%d0%be%d0%b4%d0%be%d0%b2+%d0%be%d1%82+%d0%ba%d0%be%d0%bc%d0%bf%d0%b0%d0%bd%d0%b8%d0%b8+TEC-IT"
+                src="https://i.imagesup.co/images2/830971b81bd1f2ce86d76ebffa2d58f95eadabaf.png"
                 alt="">
         </span>
         <img class="mobile-img"
