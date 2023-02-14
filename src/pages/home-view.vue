@@ -1,7 +1,7 @@
 <template>
     <section class="home-page-hero">
         <img class="home-header-img" src="https://www.kg-legal.eu/wp-content/uploads/2021/10/blockchain.gif" alt="">
-        <h1>A crypto wallet & gateway to blockchain apps</h1>
+        <h1>A crypto wallet & gateway to blockchain apps.</h1>
     </section>
     <!-- <button @click="onGetRate">getRate</button>
     <button @click="onGetMarketPriceHistory">getMarketPriceHistory</button>
