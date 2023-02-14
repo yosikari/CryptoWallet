@@ -1,0 +1,25 @@
+.add-contact-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 5;
+    min-height: 5rem;
+    min-width: 5rem;
+    font-size: 30px;
+    color: $clr2;
+    background-color: $clr3;
+    border: 2px solid $clr2;
+    border-radius: 50%;
+    transition: .5s;
+
+    &:hover {
+        cursor: pointer;
+        color: $clr3;
+        background-color: $clr2;
+        border: 2px solid $clr3;
+    }
+
+    svg {
+        margin-left: 12px;
+    }
+}

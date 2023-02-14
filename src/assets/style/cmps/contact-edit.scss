@@ -1,0 +1,48 @@
+.contact-edit {
+    display: grid;
+    justify-items: center;
+    gap: 5px;
+    padding: 10px;
+    // background-color: rgb(249, 197, 101);
+
+    span {
+        width: 50%;
+
+        input {
+            width: 100%;
+            color: $clr1;
+        }
+    }
+
+    button {
+        margin-top: 10px;
+        justify-self: center;
+    }
+}
+
+
+
+.edit-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 20px auto;
+
+    a {
+        align-self: flex-start;
+        position: relative;
+        top: 30px;
+    }
+
+    .edit-back-btn {
+        background-color: transparent;
+        border: none;
+        color: $clr1;
+        font-size: 18px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-block-start: 10px;
+
+    a {
+        justify-self: end;
+    }
+
+    img {
+        max-width: 30vw;
+    }
+}
+
+.details-back-btn {
+    color: $clr1 ;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
