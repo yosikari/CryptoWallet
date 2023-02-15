@@ -13,9 +13,9 @@
 
         <span class="dropdown-btn">☰</span>
         <section class="dropdown-options">
-            <a href="/">Home</a>
-            <a href="/#/contact">Contacts</a>
-            <a href="/#/statistic">Statistic</a>
+            <a href="/CryptoWallet/#/">Home</a>
+            <a href="/CryptoWallet/#/contact">Contacts</a>
+            <a href="/CryptoWallet/#/statistic">Statistic</a>
         </section>
 
     </header>
