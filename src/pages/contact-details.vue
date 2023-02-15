@@ -18,9 +18,15 @@
             <h2>Balance : {{ contact.balance ? contact.balance : 0 }} BTC</h2>
             <span>Transactions :
                 <pre>{{
-    contact.balance ? contact.transactions : 'No transactions yet...'
+                    contact.balance ? contact.transactions : 'No transactions yet...'
                 }}</pre>
             </span>
+        </section>
+        <section v-else>
+            <h3>
+                <a class="login-signup-link" href='/CryptoWallet/#/sign-up'>Signup</a> or
+                <a class="login-signup-link" href='/CryptoWallet/#/login'>Login</a>
+                 to tip {{ contact?.name }}</h3>
         </section>
 
 
@@ -50,6 +56,8 @@ export default {
         const contactId = this.$route.params._id
         this.contact = await contactService.getById(contactId)
         this.loggedInUser = await userService.getLoginToken()
+        if(this.loggedInUser.length === 0) this.loggedInUser = null
+        console.log('user', this.loggedInUser)
     },
     methods: {
         formatPhone(phone) {
