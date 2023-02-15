@@ -7,10 +7,8 @@
                 <font-awesome-icon icon="fa-solid fa-chevron-left" />
             </button>
         </RouterLink>
-        <h2 v-if="contact !== null">Edit contact profile</h2>
+        <h2 v-if="contact?._id">Edit contact profile</h2>
         <h2 v-else>Add new contact</h2>
-        <pre>{{ contact }}</pre>
-
     </span>
     <form @submit.prevent="save" v-if="contact" class="contact-edit">
         <span> Name: <input type="text" v-model="contact.name"></span>
