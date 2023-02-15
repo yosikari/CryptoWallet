@@ -1,6 +1,4 @@
 <template>
-
-
     <span class="edit-header">
         <RouterLink to="/">
             <button class="edit-back-btn" title="Back">
@@ -9,7 +7,6 @@
         </RouterLink>
         <h2>SignUp Now For Free</h2>
         <h4>You will get 100BTC</h4>
-
     </span>
     <form @submit.prevent="save" class="contact-edit">
         <span> Name: <input type="text" v-model="user.name"></span>
@@ -22,9 +19,7 @@
 import { userService } from '@/services/user.service.js'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-/* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-/* import specific icons */
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 library.add(faChevronLeft)
 

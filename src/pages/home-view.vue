@@ -3,10 +3,6 @@
         <img class="home-header-img" src="https://www.kg-legal.eu/wp-content/uploads/2021/10/blockchain.gif" alt="">
         <h1>A crypto wallet & gateway to blockchain apps.</h1>
     </section>
-    <!-- <button @click="onGetRate">getRate</button>
-    <button @click="onGetMarketPriceHistory">getMarketPriceHistory</button>
-    <button @click="onGetAvgBlockSize">getAvgBlockSize</button> |
-    <button @click="onGetUsers">getUsers</button> -->
     <section class="login-signup">
         <h1 v-if="loggedInUserName">Welcome {{ loggedInUserName }}</h1>
 
@@ -59,11 +55,5 @@ export default {
             userService.signupTest()
         },
     },
-    // computed: {
-
-    // },
-    // components: {
-
-    // },
 }
 </script>

@@ -1,6 +1,4 @@
 <template>
-
-
     <span class="edit-header">
         <RouterLink to="/">
             <button class="edit-back-btn" title="Back">

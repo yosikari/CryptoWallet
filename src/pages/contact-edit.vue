@@ -1,6 +1,4 @@
 <template>
-
-
     <span class="edit-header">
         <RouterLink to="/contact">
             <button class="edit-back-btn" title="Back">
@@ -23,9 +21,7 @@
 import { contactService } from '@/services/contact.service.js'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-/* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-/* import specific icons */
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 library.add(faChevronLeft)
 

@@ -8,9 +8,7 @@
         <ContactList @remove="removeContact" v-if="contacts.length" :contacts="filteredContacts" />
     </div>
 </template>
-
 <script>
-// import { contactService } from '@/services/contact.service.js'
 import { eventBus } from '@/services/eventBus.service.js'
 
 import ContactList from '@/cmps/contact-list.vue'
@@ -18,12 +16,9 @@ import ContactFilter from '@/cmps/contact-filter.vue'
 import UserMsg from '@/cmps/user-msg.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-/* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-/* import specific icons */
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 library.add(faUserPlus)
-
 
 export default {
     data() {
@@ -43,7 +38,6 @@ export default {
             const regex = new RegExp(this.filterBy.txt, 'i')
             return this.contacts?.filter(contact => regex.test(contact.name))
         }
-
     },
     methods: {
         async removeContact(contactId) {

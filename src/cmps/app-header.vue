@@ -11,7 +11,7 @@
             <RouterLink to="/statistic">Statistic</RouterLink>
         </nav>
 
-        <span class="dropdown-btn">☰</span>
+        <span @click="" class="dropdown-btn">☰</span>
         <section class="dropdown-options">
             <a href="/CryptoWallet/#/">Home</a>
             <a href="/CryptoWallet/#/contact">Contacts</a>
