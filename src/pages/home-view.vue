@@ -43,7 +43,7 @@ export default {
     },
     async created() {
         const loggedInUser = await userService.getLoginToken()
-        this.loggedInUserName = loggedInUser[0].name
+        this.loggedInUserName = loggedInUser[0]?.name
     },
     methods: {
         onGetRate() {
