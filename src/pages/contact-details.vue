@@ -8,18 +8,21 @@
         <h1>{{ contact.name }}</h1>
         <h2>{{ formatPhone(contact.phone) }}</h2>
         <h2>{{ contact.email }}</h2>
-        <pre>{{ contacts }}</pre>
+        <!-- <pre>{{ contacts }}</pre> -->
         <img :src="'https://api.dicebear.com/5.x/open-peeps/svg?seed=' + contact._id" alt="">
-        <form @submit.prevent="handle">
-            <input type="number" v-model.number="tip" />
-            <button>Tip!</button>
-        </form>
-        <h2>Balance : {{ contact.balance ? contact.balance : 0 }}</h2>
-        <span>Transactions :
-            <pre>{{
-    contact.balance ? contact.transactions : 'No transactions yet...'
-            }}</pre>
-        </span>
+
+        <section v-if="loggedInUser">
+            <form @submit.prevent="handle">
+                <input type="number" v-model.number="tip" />
+                <button>Tip!</button>
+            </form>
+            <h2>Balance : {{ contact.balance ? contact.balance : 0 }}</h2>
+            <span>Transactions :
+                <pre>{{
+        contact.balance ? contact.transactions : 'No transactions yet...'
+                }}</pre>
+            </span>
+        </section>
 
 
     </div>
@@ -41,11 +44,13 @@ export default {
         return {
             tip: null,
             contact: null,
+            loggedInUser: null,
         }
     },
     async created() {
         const contactId = this.$route.params._id
         this.contact = await contactService.getById(contactId)
+        this.loggedInUser = await userService.getLoginToken()
     },
     methods: {
         formatPhone(phone) {
@@ -57,25 +62,25 @@ export default {
         },
         async handle() {
             try {
-                const logedInUser = await userService.getLoginToken()
-                if (logedInUser[0].balance - this.tip < 0) {
+                // this.loggedInUser = await userService.getLoginToken()
+                if (this.loggedInUser[0].balance - this.tip < 0) {
                     alert('You d\'ont have much btc !')
                     return
                 }
                 const transaction = {
                     date: new Date(),
-                    from: logedInUser[0].name,
+                    from: this.loggedInUser[0].name,
                     to: this.contact.name,
                     amount: this.tip
                 }
-                // logedInUser[0].balance -= this.tip
+                // loggedInUser[0].balance -= this.tip
                 this.contact.balance += this.tip
                 if (!this.contact.transactions) {
                     this.contact.transactions = []
                 }
                 this.contact.transactions.unshift(transaction)
             } catch (err) {
-                console.log('Error you have to logedin first!',  err, err.message)
+                console.log('Error you have to loggedin first!', err, err.message)
             }
             console.log(this.contact)
             await contactService.save(this.contact)

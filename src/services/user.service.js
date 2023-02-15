@@ -19,7 +19,7 @@ const users = [
 
 import { dbService } from './db.service.js'
 const USER_KEY = 'users'
-const LOGEDIN_USER = 'logedin_user'
+const LOGGEDIN_USER = 'loggedin_user'
 
 export const userService = {
     query,
@@ -38,8 +38,8 @@ async function signupTest() {
 }
 
 async function getLoginToken() {
-    const logedin = await dbService.getLogedInUser()
-    return Promise.resolve(logedin)
+    const loggedin = await dbService.getLoggedInUser()
+    return Promise.resolve(loggedin)
 }
 
 function query(filterBy) {
@@ -60,7 +60,7 @@ function remove(userId) {
 }
 
 async function signup(name, password) {
-    localStorage.logedin_user = []
+    localStorage.loggedin_user = []
     const user = []
     const users = await dbService.query()
     if (!users) {
@@ -77,7 +77,7 @@ async function signup(name, password) {
         users.unshift(userToSave)
         user.unshift(userToSave)
         await dbService.insert(USER_KEY, users)
-        await dbService.insert(LOGEDIN_USER, user)
+        await dbService.insert(LOGGEDIN_USER, user)
     }
     catch (err) {
         console.log('Error', err, err.massage)
@@ -86,11 +86,11 @@ async function signup(name, password) {
 }
 
 async function login(name, password) {
-    localStorage.logedin_user = []
+    localStorage.loggedin_user = []
     const users = await dbService.query(USER_KEY)
     const user = users.filter(u => u.name === name)
     if (!user.length) return Promise.reject('Login failed')
-    await dbService.insert(LOGEDIN_USER, user)
+    await dbService.insert(LOGGEDIN_USER, user)
     return Promise.resolve(user)
 
 }

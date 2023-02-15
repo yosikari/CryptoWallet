@@ -2,7 +2,7 @@
 
 import { storageService } from '@/services/storage.service.js'
 import { utilService } from '@/services/util.service.js'
-const LOGEDIN_USER = 'logedin_user'
+const LOGGEDIN_USER = 'loggedin_user'
 
 export const dbService = {
     query,
@@ -11,7 +11,7 @@ export const dbService = {
     post,
     put,
     insert,
-    getLogedInUser
+    getLoggedInUser
 }
 
 const ID_FIELD = '_id'
@@ -27,9 +27,9 @@ async function get(collectionName, id) {
     return collection.find(curr => curr[ID_FIELD] === id)
 }
 
-async function getLogedInUser() {
+async function getLoggedInUser() {
     try {
-        var collection = await query(LOGEDIN_USER)
+        var collection = await query(LOGGEDIN_USER)
         return collection
     } catch (err) {
         console.log('error', err, )

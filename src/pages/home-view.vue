@@ -8,7 +8,7 @@
     <button @click="onGetAvgBlockSize">getAvgBlockSize</button> |
     <button @click="onGetUsers">getUsers</button> -->
     <section class="login-signup">
-        <h1 v-if="logedInUserName">Welcome {{ logedInUserName }}</h1>
+        <h1 v-if="loggedInUserName">Welcome {{ loggedInUserName }}</h1>
 
         <RouterLink to="/login">
             <button class="btn spacial">Login</button>
@@ -39,11 +39,11 @@ import { userService } from '@/services/user.service.js'
 
 export default {
     data() {
-        return { logedInUserName: null }
+        return { loggedInUserName: null }
     },
     async created() {
-        const logedInUser = await userService.getLoginToken()
-        this.logedInUserName = logedInUser[0].name
+        const loggedInUser = await userService.getLoginToken()
+        this.loggedInUserName = loggedInUser[0].name
     },
     methods: {
         onGetRate() {
