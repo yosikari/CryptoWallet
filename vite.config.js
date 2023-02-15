@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/CryptoWallet/',
-  // publicPath: process.env.NODE_ENV === "production" ? "/CryptoWallet/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/CryptoWallet/" : "/",
   plugins: [vue()],
   resolve: {
     alias: {
