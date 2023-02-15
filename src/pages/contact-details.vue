@@ -8,7 +8,6 @@
         <h1>{{ contact.name }}</h1>
         <h2>{{ formatPhone(contact.phone) }}</h2>
         <h2>{{ contact.email }}</h2>
-        <!-- <pre>{{ contacts }}</pre> -->
         <img :src="'https://api.dicebear.com/5.x/open-peeps/svg?seed=' + contact._id" alt="">
 
         <section v-if="loggedInUser">
@@ -16,10 +15,10 @@
                 <input type="number" v-model.number="tip" />
                 <button>Tip!</button>
             </form>
-            <h2>Balance : {{ contact.balance ? contact.balance : 0 }}</h2>
+            <h2>Balance : {{ contact.balance ? contact.balance : 0 }} BTC</h2>
             <span>Transactions :
                 <pre>{{
-        contact.balance ? contact.transactions : 'No transactions yet...'
+    contact.balance ? contact.transactions : 'No transactions yet...'
                 }}</pre>
             </span>
         </section>
@@ -74,6 +73,9 @@ export default {
                     amount: this.tip
                 }
                 // loggedInUser[0].balance -= this.tip
+                if (!this.contact.balance) {
+                    this.contact.balance = 0
+                }
                 this.contact.balance += this.tip
                 if (!this.contact.transactions) {
                     this.contact.transactions = []
