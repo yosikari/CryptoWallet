@@ -1,4 +1,5 @@
 <template>
+    <UserMsg />
     <span class="edit-header">
         <RouterLink to="/">
             <button class="edit-back-btn" title="Back">
@@ -16,6 +17,7 @@
 
 <script>
 import { userService } from '@/services/user.service.js'
+import UserMsg from '@/cmps/user-msg.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
@@ -46,6 +48,7 @@ export default {
         }
     },
     components: {
+        UserMsg,
         FontAwesomeIcon
     }
 }

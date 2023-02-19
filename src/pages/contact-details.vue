@@ -1,4 +1,5 @@
 <template>
+    <UserMsg />
     <RouterLink to="/contact">
         <button title="Back" class="details-back-btn">
             <font-awesome-icon icon="fa-solid fa-chevron-left" />
@@ -26,7 +27,8 @@
             <h3>
                 <a class="login-signup-link" href='/CryptoWallet/#/sign-up'>Signup</a> or
                 <a class="login-signup-link" href='/CryptoWallet/#/login'>Login</a>
-                 to tip {{ contact?.name }}</h3>
+                to tip {{ contact?.name }}
+            </h3>
         </section>
 
 
@@ -36,6 +38,9 @@
 <script>
 import { contactService } from '@/services/contact.service.js'
 import { userService } from '@/services/user.service.js'
+import UserMsg from '@/cmps/user-msg.vue'
+import { eventBus } from '@/services/eventBus.service.js'
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
@@ -56,8 +61,7 @@ export default {
         const contactId = this.$route.params._id
         this.contact = await contactService.getById(contactId)
         this.loggedInUser = await userService.getLoginToken()
-        if(this.loggedInUser.length === 0) this.loggedInUser = null
-        console.log('user', this.loggedInUser)
+        if (this.loggedInUser.length === 0) this.loggedInUser = null
     },
     methods: {
         formatPhone(phone) {
@@ -68,10 +72,15 @@ export default {
             return '+1' + phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
         },
         async handle() {
+            const msg = {
+                txt: `You don't have enough BTC`,
+                type: 'error',
+                timeout: 2500,
+            }
             try {
                 // this.loggedInUser = await userService.getLoginToken()
                 if (this.loggedInUser[0].balance - this.tip < 0) {
-                    alert('You d\'ont have much btc !')
+                    eventBus.emit('user-msg', msg)
                     return
                 }
                 const transaction = {
@@ -97,6 +106,7 @@ export default {
         }
     },
     components: {
+        UserMsg,
         FontAwesomeIcon
     }
 }

@@ -60,8 +60,8 @@ export default {
                     {
                         label: this.labelName,
                         fill: true,
-                        backgroundColor: '#6262d977',
-                        borderColor: '#6262D9',
+                        backgroundColor: '#0b65c677',
+                        borderColor: '#0b65c6',
                         pointRadius: 0,
                         lineTension: 0.2,
                         data: this.dataLine.map(value => value.y),

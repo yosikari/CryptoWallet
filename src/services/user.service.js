@@ -1,4 +1,5 @@
 import { utilService } from '@/services/util.service.js'
+import { eventBus } from '@/services/eventBus.service.js'
 
 const users = [
     {
@@ -86,10 +87,18 @@ async function signup(name, password) {
 }
 
 async function login(name, password) {
+    const msg = {
+        txt: `Wrong username or password`,
+        type: 'error',
+        timeout: 2500,
+    }
     localStorage.loggedin_user = []
     const users = await dbService.query(USER_KEY)
     const user = users.filter(u => u.name === name)
-    if (!user.length) return Promise.reject('Login failed')
+    if (!user.length) {
+        eventBus.emit('user-msg', msg)
+        return Promise.reject('Login failed')
+    }
     await dbService.insert(LOGGEDIN_USER, user)
     return Promise.resolve(user)
 
