@@ -6,4 +6,8 @@ footer {
     padding-inline: 10px;
     color: $clr2;
     background-color: $clr3;
+    position: fixed;
+    bottom: 0;
+    min-width: 100vw;
+    z-index: 3;
 }

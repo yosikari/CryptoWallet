@@ -13,9 +13,11 @@
         <span> Password: <input type="password" v-model="user.password"></span>
         <button title="Submit changes" class="btn">Submit</button>
     </form>
+    <AppFooter />
 </template>
 
 <script>
+import AppFooter from '@/cmps/app-footer.vue'
 import { userService } from '@/services/user.service.js'
 import UserMsg from '@/cmps/user-msg.vue'
 
@@ -48,12 +50,11 @@ export default {
         }
     },
     components: {
+        AppFooter,
         UserMsg,
         FontAwesomeIcon
     }
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

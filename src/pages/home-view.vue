@@ -28,10 +28,13 @@
 
     </section>
     <img class="footer-gif" src="https://i.imagesup.co/images2/c99f72c7e4036a3e9156605245de7fa24071d995.gif" alt="">
+
+    <AppFooter />
 </template>
 
 
 <script>
+import AppFooter from '@/cmps/app-footer.vue'
 import { userService } from '@/services/user.service.js'
 import UserMsg from '@/cmps/user-msg.vue'
 
@@ -51,6 +54,7 @@ export default {
         }
     },
     components: {
+        AppFooter,
         UserMsg
     }
 }

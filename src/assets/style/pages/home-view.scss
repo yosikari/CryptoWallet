@@ -104,11 +104,17 @@
 .footer-gif {
     width: 200px;
     object-fit: contain;
-    position: absolute;
-    bottom: -34px;
+    position: fixed;
+    bottom: 26px;
     right: 5vw;
-    z-index: 3;
+    z-index: 6;
 }
+
+@media (min-width: $break-narrow) {
+    .footer-gif {
+        bottom: 48px;
+    }
+    }
 
 .login-signup {
     display: flex;
