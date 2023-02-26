@@ -131,6 +131,10 @@
     }
 }
 
+.login-signup-btns {
+    display: flex;
+}
+
 @media (min-width: $break-narrow) {
     .login-signup {
         bottom: 90px;

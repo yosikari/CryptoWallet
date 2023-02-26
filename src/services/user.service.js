@@ -1,7 +1,7 @@
 import { utilService } from '@/services/util.service.js'
 import { eventBus } from '@/services/eventBus.service.js'
 
-const users = [
+var users = [
     {
         "_id": "user101",
         "name": "Muki Ben David",
@@ -29,7 +29,8 @@ export const userService = {
     login,
     signup,
     getLoginToken,
-    signupTest
+    signupTest,
+    logout
 }
 
 async function signupTest() {
@@ -63,7 +64,7 @@ function remove(userId) {
 async function signup(name, password) {
     localStorage.loggedin_user = []
     const user = []
-    const users = await dbService.query()
+    let users = await dbService.query()
     if (!users) {
         users = []
     }
@@ -102,6 +103,26 @@ async function login(name, password) {
     await dbService.insert(LOGGEDIN_USER, user)
     return Promise.resolve(user)
 
+}
+
+async function logout() {
+    const user = []
+    const msg = {
+        txt: `logout failed, please try again.`,
+        type: 'error',
+        timeout: 2500,
+    }
+    try {
+        localStorage.loggedin_user = []
+        eventBus.emit('user-msg', {
+            txt: 'Successfully logged out.',         
+            type: 'success',
+        })
+    }
+    catch (err) {
+        console.log('logout failed:', err)
+        eventBus.emit('user-msg', msg)
+    }
 }
 
 
