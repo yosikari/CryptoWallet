@@ -1,12 +1,12 @@
 # Crypto Wallet app (Vue):
-This app is simple contacts wallet app writed in vue.js
+This app is simple contacts wallet app written in vue.js
 
 ## Getting started
-Clone the project or dowload the files on top.
+Clone the project or download the files on top.
 
 `git clone https://github.com/yosikari/CryptoWallet.git`
 
-Open the terminal and enter the following line to run it locally on your computer:
+Open the terminal and enter the following command to run it locally on your computer:
 
 `npm i`
 `npm run dev`
@@ -20,23 +20,23 @@ Expected output:
   
 Open http://localhost:5173/CryptoWallet/ to view it in the browser.
 
-**Note:** port can be changed on your device. 
+**Note:** The port can be different on your device. 
 
 You also can view it on git pages: 
 [Crypto Wallet (git pages)](https://yosikari.github.io/CryptoWallet/#/ "Crypto Wallet (git pages)")
 
 ### Features
 
-- **User system**: user can signup, and login, new user will get 100 (fake) BTC on signup.
-- **Full-CRUDL**: user can <b>C</b>reate new contacts, <b>R</b>ead contacts info, <b>U</b>pdate name/mail/phone, <b>D</b>elete contatcts, view the <b>L</b>ist of his contacts.
-- **Bitcoin charts**: user can view live market price of BTC, using API call and charts lib.
+- **User system**: The user can signup, and login. A new user will get 100 (fake) BTC on his account.
+- **Full-CRUDL**: The user can add new contacts, view contacts info, update name/mail/phone, and delete contacts.
+- **Bitcoin charts**: The user can view the live market price of BTC, using API calls and charts lib.
 
 # Wallet
 
 <img height="100" src="https://trustwallet.com/assets/images/media/assets/trust_platform.svg" />
 
-- Logged in user. can transferr tip to each contact, maximum value 100 BTC.
-- On contact details user can view all transactions history of this spesific contact.
+- Logged in user. can transfer a tip to each contact, the maximum value is 100 BTC.
+- When pressing contact details the user can view all transactions history with this specific contact.
 
 
 **Table of Contents**
