@@ -23,7 +23,7 @@ Open http://localhost:5173/CryptoWallet/ to view it in the browser.
 **Note:** port can be changed on your device. 
 
 You also can view it on git pages: 
-[Crypto Wallet (git pages)](http://https://yosikari.github.io/CryptoWallet/ "Crypto Wallet (git pages)")
+[Crypto Wallet (git pages)](http://https://yosikari.github.io/CryptoWallet/#/ "Crypto Wallet (git pages)")
 
 ### Features
 
@@ -107,4 +107,4 @@ You also can view it on git pages:
 
 
 ### Links
-[Crypto Wallet (git pages)](http://https://yosikari.github.io/CryptoWallet/ "Crypto Wallet (git pages)")
+[Crypto Wallet (git pages)](http://https://yosikari.github.io/CryptoWallet/#/ "Crypto Wallet (git pages)")
