@@ -1,32 +1,73 @@
+# Crypto Wallet app (Vue):
+This app is simple contacts wallet app writed in vue.js
 
-<h1> Crypto Wallet <img height="100" src="https://trustwallet.com/assets/images/media/assets/trust_platform.svg" /> </h1>
+##Getting started
+Clone the project or dowload the files on top.
 
-<h2>Home Page</h2>
+`git clone https://github.com/yosikari/CryptoWallet.git`
 
-<img src="https://im4.ezgif.com/tmp/ezgif-4-95af5c47ed.gif" />
+Open the terminal and enter the following line to run it locally on your computer:
 
-<h2>Signup & Login</h2>
+`npm i`
+`npm run dev`
 
-<img height="400" src="https://im4.ezgif.com/tmp/ezgif-4-7e673cb2cd.gif" />
+Runs the app in the development mode. 
+Expected output: 
+     VITE v4.1.1  ready in 409 ms
+    
+      ➜  Local:   http://localhost:5173/CryptoWallet/
+      ➜  Network: use --host to expose
+      ➜  press h to show help
+  
+Open http://localhost:5173/CryptoWallet/ to view it in the browser.
 
-<img height="400" src="https://im4.ezgif.com/tmp/ezgif-4-58ef7d9570.gif" />
+**Note:** port can be changed on your device. 
 
-<h2>view and tip</h2>
+You also can view it on git pages: 
+[Crypto Wallet (git pages)](http://https://yosikari.github.io/CryptoWallet/ "Crypto Wallet (git pages)")
 
-<img height="400" src="https://im4.ezgif.com/tmp/ezgif-4-c09b0e2be5.gif" />
+### Features
 
-<h2>add and edit</h2>
+- **User system**: user can signup, and login, new user will get 100 (fake) BTC on signup.
+- **Full-CRUDL**: user can <b>C</b>reate new contacts, <b>R</b>ead contacts info, <b>U</b>pdate name/mail/phone, <b>D</b>elete contatcts, view the <b>L</b>ist of his contacts.
+- **Bitcoin charts**: user can view live market price of BTC, using API call and charts lib.
 
-<img height="400" src="https://im4.ezgif.com/tmp/ezgif-4-548a64e2a3.gif" />
+# Wallet
 
-<h2>filter and delete</h2>
+<img height="100" src="https://trustwallet.com/assets/images/media/assets/trust_platform.svg" />
 
-<img height="400" src="https://im4.ezgif.com/tmp/ezgif-4-28fcac5637.gif" />
+- Logged in user. can transferr tip to each contact, maximum value 100 BTC.
+- On contact details user can view all transactions history of this spesific contact.
 
-<h2>charts</h2>
 
-<img height="400" src="https://im4.ezgif.com/tmp/ezgif-4-7bdb671aa3.gif" />
+**Table of Contents**
 
-<h2>mobile</h2>
+[TOCM]
 
-<img height="400" src="https://im4.ezgif.com/tmp/ezgif-4-d8683facb5.gif" />
+[TOC]
+
+#Home Page
+![homepage](https://im4.ezgif.com/tmp/ezgif-4-95af5c47ed.gif "homepage")
+##SignUp & LogIn
+|LogIn   |  SignUp |
+| ------------ | ------------ |
+| ![signup](https://im4.ezgif.com/tmp/ezgif-4-58ef7d9570.gif "signup") | ![login](https://im4.ezgif.com/tmp/ezgif-4-7e673cb2cd.gif "login")   |
+
+##View & Tip
+![View&tip](https://im4.ezgif.com/tmp/ezgif-4-c09b0e2be5.gif "view&tip")
+
+##Add & Edit
+![add&edit](https://im4.ezgif.com/tmp/ezgif-4-548a64e2a3.gif "add&edit")
+
+##Filter & Delete
+![fiter&delete](https://im4.ezgif.com/tmp/ezgif-4-28fcac5637.gif "fiter&delete")
+
+##Bitcoin Charts
+![btccharts](https://im4.ezgif.com/tmp/ezgif-4-7bdb671aa3.gif "btccharts")
+
+##Mobile view 
+![mobile](https://im4.ezgif.com/tmp/ezgif-4-d8683facb5.gif "mobile")
+
+
+###Links
+[Crypto Wallet (git pages)](http://https://yosikari.github.io/CryptoWallet/ "Crypto Wallet (git pages)")
